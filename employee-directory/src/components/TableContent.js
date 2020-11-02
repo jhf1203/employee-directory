@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import employees from "../employees.json"
+import tableWrapper from "./TableWrapper"
 
 // How to render this within the table element in TableWrapper?
 // - Use divs for each row in TableWrapper?
@@ -8,13 +9,14 @@ import employees from "../employees.json"
 
 function TableContent(props) {
 
-    const [tableState, setTableState] = useState({
+    const [contentState, setContentState] = useState({
         employees
       });
-      console.log(tableState)
+      console.log(contentState)
+
+
   return (
     <div>
-        
         {employees.map(employee => (
             <tr className="employeeRow" key={employee.id}>
                 <td className="colNameF">{employee.firstName}</td>
