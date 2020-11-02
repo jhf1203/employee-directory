@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import TableContent from "./TableContent"
+import employees from "../employees.json"
 
 function TableWrapper(props) {
+
+    
+
+    
+
+// Will need functions here to filter and sort
+
   return (
     <div>
       <header>
@@ -25,16 +33,15 @@ function TableWrapper(props) {
           <td><input className="filterInput" type="text" placeholder="Filter Here"></input></td>
           <td><input className="filterInput" type="text" placeholder="Filter Here"></input></td>
         </tr>
-        <tr className="sortRow"></tr>
+        <tr className="sortRow">
           <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up"></i><i className="button btn fa fa-caret-down"></i></p></td>
           <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up"></i><i className="button btn fa fa-caret-down"></i></p></td>
           <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up"></i><i className="button btn fa fa-caret-down"></i></p></td>
           <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up"></i><i className="button btn fa fa-caret-down"></i></p></td>
           <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up"></i><i className="button btn fa fa-caret-down"></i></p></td>
           <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up"></i><i className="button btn fa fa-caret-down"></i></p></td>
-        <tr className="tableContent">
-          <TableContent />
         </tr>
+          <TableContent />
        </table>
      </div>
     </div>
