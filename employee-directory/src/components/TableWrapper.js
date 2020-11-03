@@ -6,32 +6,77 @@ function TableWrapper(props) {
 
     
   const [wrapperState, setWrapperState] = useState({
-    employees
+    employees,
+    filteredEmps: [],
   });
-  console.log(contentState)
+
     
 
 // Will need functions here to filter and sort
 
 function handleSortAsc(field) {
-  employees.sort((a, b) => {
-      return a.field - b.field
-  })
-};
-
+  
+    var newFilteredAsc = employees.sort(( a, b ) => {
+      if ( a[field] < b[field] ){
+        return -1;
+      }
+      if ( a[field] > b[field] ){
+        return 1;
+      }
+      return 0;
+    })
+  
+    
+    console.log('field', field)
+    setWrapperState({...wrapperState, filteredEmps: newFilteredAsc, })
+  
+  }
+  
 function handleSortDesc(field) {
-  employees.sort((a, b) => {
-      return b.field - a.field
+  var newFilteredAsc = employees.sort(( a, b ) => {
+    if ( a[field] > b[field] ){
+      return -1;
+    }
+    if ( a[field] < b[field] ){
+      return 1;
+    }
+    return 0;
   })
+
+  
+  console.log('field', field)
+  setWrapperState({...wrapperState, filteredEmps: newFilteredAsc, })
 }
 
-  handleFilter = (event) => {
-  setWrapperState({
-    ...employees,
-    employees.event.target.name,
-    ...employees
-  })
+  var handleFilter = (event) => {
+    console.log('HANDLE FILTER!!!!', event.target.value)
+
+    var newFiltered = []
+
+    wrapperState.employees.map (employee => {
+      if (employee[event.target.name].substring(0, event.target.value.length) === event.target.value) {
+        console.log(' found a match!!')
+        newFiltered.push(employee)
+      }
+    })
+
+    console.log('new filitered ppeeeps!!!', newFiltered)
+    setWrapperState({...wrapperState, filteredEmps: newFiltered })
+  // setWrapperState({
+  //   ...employees,
+  //   employees.event.target.name,
+  //   ...employees
+  // })
 }
+console.log('this is wrapper state', wrapperState)
+
+  var empsToDisplay = wrapperState.employees
+
+  if (wrapperState.filteredEmps.length > 0) {
+    empsToDisplay = wrapperState.filteredEmps
+  }
+
+
 
   return (
     <div>
@@ -57,14 +102,16 @@ function handleSortDesc(field) {
           <td><input className="filterInput" type="text" placeholder="Filter Here" name="gender" onChange={handleFilter}></input></td>
         </tr>
         <tr className="sortRow">
-          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={TableContent.handleSortAsc(firstName)}></i><i className="button btn fa fa-caret-down" onClick={TableContent.handleSortDesc(firstName)}></i></p></td>
-          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={TableContent.handleSortAsc(lastName)}></i><i className="button btn fa fa-caret-down" onClick={TableContent.handleSortDesc(lastName)}></i></p></td>
-          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={TableContent.handleSortAsc(email)}></i><i className="button btn fa fa-caret-down" onClick={TableContent.handleSortDesc(email)}></i></p></td>
-          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={TableContent.handleSortAsc(department)}></i><i className="button btn fa fa-caret-down" onClick={TableContent.handleSortDesc(department)}></i></p></td>
-          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={TableContent.handleSortAsc(date)}></i><i className="button btn fa fa-caret-down" onClick={TableContent.handleSortDesc(date)}></i></p></td>
-          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={TableContent.handleSortAsc(gender)}></i><i className="button btn fa fa-caret-down" onClick={TableContent.handleSortDesc(gender)}></i></p></td>
+          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={() => handleSortAsc('firstName')}></i><i className="button btn fa fa-caret-down" onClick={() => handleSortDesc('firstName')}></i></p></td>
+          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={() => handleSortAsc('lastName')}></i><i className="button btn fa fa-caret-down" onClick={() => handleSortDesc('lastName')}></i></p></td>
+          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={() => handleSortAsc('email')}></i><i className="button btn fa fa-caret-down" onClick={() => handleSortDesc('email')}></i></p></td>
+          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={() => handleSortAsc('department')}></i><i className="button btn fa fa-caret-down" onClick={() => handleSortDesc('department')}></i></p></td>
+          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={() => handleSortAsc('date')}></i><i className="button btn fa fa-caret-down" onClick={() => handleSortDesc('date')}></i></p></td>
+          <td className="sortField"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={() => handleSortAsc('gender')}></i><i className="button btn fa fa-caret-down" onClick={() => handleSortDesc('gender')}></i></p></td>
         </tr>
-          <TableContent />
+        {empsToDisplay.map((employee)=> { 
+           return ( <TableContent employee={employee} />)
+         })}
        </table>
      </div>
     </div>

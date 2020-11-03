@@ -12,23 +12,20 @@ function TableContent(props) {
     const [contentState, setContentState] = useState({
         employees
       });
-      console.log(contentState)
+      //console.log(contentState)
 
 
-  return (
-    <div>
-        {employees.map(employee => (
-            <tr className="employeeRow" key={employee.id}>
-                <td className="colNameF">{employee.firstName}</td>
-                <td className="colNameL">{employee.lastName}</td>
-                <td className="colEmail">{employee.email}</td>
-                <td className="colDept">{employee.department}</td>
-                <td className="colHireDate">{employee.date}</td>
-                <td className="colGender">{employee.gender}</td>
-            </tr>
-        ))}
-    </div>
-  );
+      return (
+    
+        <tr className="employeeRow" key={props.id}>
+            <td className="colNameF">{props.employee.firstName}</td>
+            <td className="colNameL">{props.employee.lastName}</td>
+            <td className="colEmail">{props.employee.email}</td>
+            <td className="colDept">{props.employee.department}</td>
+            <td className="colHireDate">{props.employee.date}</td>
+            <td className="colGender">{props.employee.gender}</td>
+         </tr>
+);
   
 }
 
