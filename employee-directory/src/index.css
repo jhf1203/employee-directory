@@ -1,13 +1,115 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size:14px;
+  background-color: #DDBC8A
+
+}
+
+h1 {
+text-align: center;
+margin: 0px 25% 20px 25%;
+padding: 5px 0px 5px 0px;
+font-size:60px;
+background-color: #EBEAE2;
+width:50%;
+border: 2px solid #10110F;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+table {
+  width:100%;
+  background-color: #EBEAE2
+}
+
+input {
+  width: 100%;
+  background-color: #EBEAE2
+
+}
+
+.jumbotron {
+  margin: 0px 0px 20px 0px;
+  border-bottom: 2px solid #10110F;
+  background-image: url("./assets/banner.jpg");
+  background-size:33.3%;
+  align-content: center;
+  align-items: center
+}
+.container {
+  width:90%;
+}
+
+.headRow {
+  border-top: 2px solid #10110F;
+  border-left: 2px solid #10110F;
+  border-right: 2px solid #10110F;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  background-color: #10110F;
+  color: #EBEAE2
+}
+
+.colHead {
+  border: 2px solid #10110F;
+  font-size: 18px;
+  font-weight:600;
+  width: 8%;
+}
+
+.inputRow {
+  border-left: 2px solid #10110F;
+  border-right: 2px solid #10110F;
+  width: 100%;
+  background-color: #3D434C
+}
+
+input::placeholder {
+  text-align: center;
+  color: #3D434C
+}
+
+.sortRow {
+  border-bottom: 2px solid #10110F;
+  border-left: 2px solid #10110F;
+  border-right: 2px solid #10110F;
+  width: 100%;
+  background-color: #58789C
+}
+.sortText {
+  text-align: center;
+  margin-bottom: 1%
+}
+
+.button {
+  padding:0px 3px 0px 3px;
+}
+
+.tdContent {
+  border: 1px solid #10110F;
+  text-align: center;
+}
+
+.employeeRow:hover {
+  background-color: #DDBC8A;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.15s ease;
+  transition: font-size 0.15s ease;
+
+
+}
+
+.colNameF,
+.colNameL {
+  font-weight:600;
+}
+
+
