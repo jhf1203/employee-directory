@@ -1,55 +1,63 @@
-# Unit 19 React Homework: Employee Directory
+# employee-directory
 
-## Overview
+![](https://img.shields.io/badge/License-MIT-yellowgreen)
+      
+## Table Of Contents
+1.  [Description](#description)
+2.  [Installation](#installation) 
+3.  [Usage](#usage)
+4.  [Collaborating](#collaborating)
+5.  [Contact](#contact)
+      
+_________________________________
+  
+### Description
+      
+This is an app that gives the user a simple view of their team's basic information that's able to be easily manipulated and filtered.  It is written in React to be optimized for larger organizations, and allows the user to quickly filter and sort across multiple fields to narrow the list to only show information that they would like to see
+      
+_________________________________
+  
+### Instructions
+  
+This application is purely web-based, so there is no additional installation needed besides what has already been provided for you.  
 
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+To use it, simply access the deployed website [HERE](https://jhf1203.github.io/employee-directory/)
+  
+_________________________________
+  
+### Usage
 
-## User Story
+#### Demonstration (gif):
 
-* As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+![image](./public/demo.gif)
+  
+Upon loading the page you will see a list of all employees in an organization, including several key components regarding their employment:  
 
-## Business Context
+- First Name
+- Last Name
+- E-mail Address
+- Department
+- Hire Date
+- Gender
 
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
-
-## Acceptance Criteria
-
-Given a table of random users, when the user loads the page, a table of employees should render. 
-
-The user should be able to:
-
-  * Sort the table by at least one category
-
-  * Filter the users by at least one property.
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
-
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-Follow these guidelines for committing:
-
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-* Test your application before you commit to ensure functionality at every step in the development process
-
-* We would like you to have well over 200 commits by graduation, so commit early and often!
-
-* Deploy this site to GitHub Pages using the [Create React App docs for deployment.](https://create-react-app.dev/docs/deployment/#github-pages)
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* the URL to the deployed application
-
-* the URL to the Github repository
-
+Above each column you'll see options to both filter and sort.  To filter simply enter text down to which you would like to narrow results into the corresponding input.  To sort simply click the arrows in each column in the "sort" row (ascending or descending).  The filtered and sorted information automatically renders, so there is no additional action needed from the user.
+  
+_________________________________
+  
+### Collaborating
+  
+Got an idea?  A bug to report?  Or even a thought on how the application could run more efficiently?  Log it [here](https://github.com/jhf1203/employee-directory/issues) as an issue, and we'll talk about it!
+  
+_________________________________
+  
+### Contact Me
+  
+#### Jim Faulkner
+- [E-mail](mailto:jhf1203@gmail.com)
+- [Github](jhf1203)
+  
+_________________________________
+  
+### License
+  
+This application is [licensed](https://opensource.org/licenses/MIT) under the MIT License
