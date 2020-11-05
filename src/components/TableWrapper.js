@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import TableContent from "./TableContent"
+
+// File that contains the employee list, from the simple API Heroku file.
 import employees from "../employees.json"
 
 function TableWrapper() {
