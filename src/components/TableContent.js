@@ -2,6 +2,7 @@ import React from "react";
 
 function TableContent(props) {
   return (
+    // Rendering each table row into TableWrapper.js
     <tr className="employeeRow" key={props.id}>
       <td className="colNameF tdContent">{props.employee.firstName}</td>
       <td className="colNameL tdContent">{props.employee.lastName}</td>

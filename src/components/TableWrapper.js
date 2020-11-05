@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import TableContent from "./TableContent"
 import employees from "../employees.json"
 
-function TableWrapper(props) {
+function TableWrapper() {
 
+  // Hook to define states
   const [wrapperState, setWrapperState] = useState({
     employees,
     filteredEmps: [],
   });
 
+  // Function to sort employees ascending
 function handleSortAsc(field) {
   
     let newFilteredAsc = employees.sort(( a, b ) => {
@@ -25,6 +27,7 @@ function handleSortAsc(field) {
   
   }
   
+  // Function to sort employees in descending order
 function handleSortDesc(field) {
   let newFilteredDesc = employees.sort(( a, b ) => {
     if ( a[field] > b[field] ){
@@ -40,6 +43,7 @@ function handleSortDesc(field) {
   setWrapperState({...wrapperState, filteredEmps: newFilteredDesc, })
 }
 
+  // Function to handle filters
   const handleFilter = (event) => {
 
     const newFiltered = []
@@ -59,8 +63,7 @@ function handleSortDesc(field) {
     empsToDisplay = wrapperState.filteredEmps
   }
 
-
-
+  // Static text that will always render
   return (
     <div>
       <header className="jumbotron">
@@ -92,6 +95,8 @@ function handleSortDesc(field) {
           <td className="sortField colHead"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={() => handleSortAsc('date')}></i><i className="button btn fa fa-caret-down" onClick={() => handleSortDesc('date')}></i></p></td>
           <td className="sortField colHead"><p className="sortText">Sort<i className="button btn fa fa-caret-up" onClick={() => handleSortAsc('gender')}></i><i className="button btn fa fa-caret-down" onClick={() => handleSortDesc('gender')}></i></p></td>
         </tr>
+
+        {/* Rendering from TableContent component */}
         {empsToDisplay.map((employee)=> { 
            return ( <TableContent employee={employee} />)
          })}
